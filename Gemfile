@@ -12,6 +12,7 @@ gem 'jbuilder', '~> 1.2'
 
 group :development do
   gem 'spring'
+  gem 'guard-spring'
 end
 
 group :development, :test do
