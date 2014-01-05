@@ -1,0 +1,13 @@
+<% if user_signed_in? %>
+  <%= link_to 'write inspiration', new_inspiration_path %>
+  <% @inspirations.each do |inspiration| %>
+    <hr>
+    <%= inspiration.title %>&nbsp;(written by <%= inspiration.user.name %>)<br />
+    <%= inspiration.contents %><br />
+    <% if current_user == inspiration.user %>
+      <%= link_to 'edit', edit_inspiration_path(inspiration) %> |
+      <%= link_to 'Destroy', inspiration, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
+  <% end %>
+  <hr>
+<% end %>

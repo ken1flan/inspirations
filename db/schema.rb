@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131230062052) do
+ActiveRecord::Schema.define(version: 20140105044651) do
+
+  create_table "inspirations", force: true do |t|
+    t.integer  "user_id"
+    t.string   "title",      limit: 32
+    t.text     "contents"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.integer  "sign_in_count",                default: 0, null: false
